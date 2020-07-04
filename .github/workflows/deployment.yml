@@ -1,0 +1,29 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: 1. Set Environment Variables
+        run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
+      - name: 2. Install Composer Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+      - name: 3. Create SQLite
+        run: |
+          mkdir -p database
+          touch database/database.sqlite
+      - name: 4. Generate Application key
+        run: php artisan key:generate
+      - name: 5. Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+      - name: 6. Deploy
+        run: php artisan deploy
