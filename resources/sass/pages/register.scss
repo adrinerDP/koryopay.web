@@ -1,0 +1,22 @@
+article#register {
+    .token {
+        text-align: center;
+        .digit {
+            font-weight: 700;
+            margin: 0 0.25rem;
+            padding-bottom: 0.25rem;
+            font-size: 3rem;
+            line-height: 2.75rem;
+            border-bottom: 3px solid #000;
+        }
+    }
+    input#with-numpad {
+        background: none;
+        box-shadow: none;
+        border: none;
+        border-bottom: 2px solid #3e3e3e;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 5px;
+    }
+}

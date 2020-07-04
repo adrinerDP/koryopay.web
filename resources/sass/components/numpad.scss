@@ -1,0 +1,34 @@
+.numpad {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 480px;
+    background: #ffffff;
+    .row {
+        margin: 0;
+    }
+    .col-4 {
+        padding: 0;
+        border-right: 1px solid #d1d1d1;
+        border-top: 1px solid #d1d1d1;
+        &:last-child {
+            border-right: 0;
+        }
+    }
+    .col {
+        padding: 0;
+    }
+    .number {
+        padding: 0.5rem 1rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #000000;
+    }
+    .submit {
+        padding: 1rem;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #ffffff;
+        background: $info;
+    }
+}

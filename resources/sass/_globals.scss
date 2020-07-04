@@ -1,0 +1,17 @@
+a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+article {
+    padding: 0 1rem;
+}
+
+label {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}

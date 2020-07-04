@@ -1,0 +1,17 @@
+@import "variables";
+@import "~bootstrap";
+@import "~font-kopubworld/css/all.css";
+@import "~sweetalert2/src/sweetalert2";
+@import "globals";
+
+// Components
+@import "./components/container";
+@import "./components/card";
+@import "./components/numpad";
+@import "./components/icheck";
+@import "./components/header";
+
+// Pages
+@import "./pages/home";
+@import "./pages/pay";
+@import "./pages/register";
