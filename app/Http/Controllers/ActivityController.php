@@ -14,13 +14,13 @@ class ActivityController extends Controller
             return 'LOCKED';
         }
         $card_id = $this->getCardId($request->fingerprint);
-        if (!$card_id) {
-            return 'UNREGISTERED';
-        }
         Activity::create([
             'fingerprint' => $request->fingerprint,
             'card_id' => $card_id
         ]);
+        if (!$card_id) {
+            return 'UNREGISTERED';
+        }
         return 'UPDATED';
     }
 

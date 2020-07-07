@@ -45,7 +45,7 @@ class RegisterController extends Controller
             return $this->revokeAndUnlock();
         }
         $card = $register->user->cards()->create([
-            'is_student_id' => $request->has('is_student_id'),
+            'is_student_id' => !$request->has('is_student_id'),
             'fingerprint' => Activity::getLatestActivity()->fingerprint,
         ]);
         $register->delete();
